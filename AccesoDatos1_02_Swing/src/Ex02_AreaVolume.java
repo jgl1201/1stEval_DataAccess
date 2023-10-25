@@ -88,13 +88,13 @@ public class Ex02_AreaVolume extends JFrame {
 			public void keyTyped(KeyEvent e) {
 				System.out.println(e.getKeyChar());
 				
-				if (e.getKeyChar() >= '0' && e.getKeyChar() <= '9' || e.getKeyChar() == '.') {
+				if (Character.isDigit(e.getKeyChar()) || e.getKeyChar() == '.') {
 					textFieldRadius.setEditable(true);
 					textFieldRadius.setBackground(Color.WHITE);
 				} else {
 					textFieldRadius.setBackground(Color.RED);
 					JOptionPane.showMessageDialog(null, "Introduce solo números, CARAECHIMBA");
-					textFieldRadius.setText("");
+					e.consume();
 				}
 				
 			}
@@ -112,13 +112,13 @@ public class Ex02_AreaVolume extends JFrame {
 			public void keyTyped(KeyEvent e) {
 				System.out.println(e.getKeyChar());
 				
-				if (e.getKeyChar() >= '0' && e.getKeyChar() <= '9' || e.getKeyChar() == '.') {
+				if (Character.isDigit(e.getKeyChar()) || e.getKeyChar() == '.') {
 					textFieldHeight.setEditable(true);
 					textFieldHeight.setBackground(Color.WHITE);
 				} else {
 					textFieldHeight.setBackground(Color.RED);
 					JOptionPane.showMessageDialog(null, "Introduce solo números, CARAECHIMBA");
-					textFieldHeight.setText("");
+					e.consume();
 				}
 				
 			}
@@ -130,7 +130,7 @@ public class Ex02_AreaVolume extends JFrame {
 				try {
 					double radio = Double.parseDouble(textFieldRadius.getText());
 					double altura = Double.parseDouble(textFieldHeight.getText());
-					double area = Math.PI * Math.pow(radio, 2);
+					double area = (Math.PI * Math.pow(radio, 2)) + (2*Math.PI * radio * altura);
 					double volumen = Math.PI * Math.pow(radio, 2) * altura;
 					
 					lblArea.setText("Area: " + area);
