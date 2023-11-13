@@ -1,4 +1,4 @@
-package Ex07_UserData;
+package Ex12_MathCalcs;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -16,14 +16,13 @@ public class TextFieldHandler implements KeyListener {
 	public JTextField getTextField() {
 		return textField;
 	}
-
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
-		if(!Character.isLetter(e.getKeyChar())) {
-			e.consume();
-		} else
+		if (Character.isDigit(e.getKeyChar())) {
 			textField.setEditable(true);
-		
+		} else
+			e.consume();
 	}
 
 	@Override

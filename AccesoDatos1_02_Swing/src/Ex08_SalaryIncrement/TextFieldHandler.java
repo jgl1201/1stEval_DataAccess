@@ -1,4 +1,4 @@
-package Ex07_UserData;
+package Ex08_SalaryIncrement;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -19,11 +19,13 @@ public class TextFieldHandler implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		if(!Character.isLetter(e.getKeyChar())) {
-			e.consume();
-		} else
+		if (Character.isDigit(e.getKeyChar()) || e.getKeyChar() == '.') {
+			if (textField.getText().contains(".") && e.getKeyChar() == '.') {
+				e.consume();
+			}
 			textField.setEditable(true);
-		
+		} else
+			e.consume();
 	}
 
 	@Override

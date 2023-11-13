@@ -41,6 +41,7 @@ public class Ex07_UserData extends JFrame {
 	 * Create the frame.
 	 */
 	public Ex07_UserData() {
+		setTitle("SEND YOUR DATA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 500);
 		contentPane = new JPanel();
