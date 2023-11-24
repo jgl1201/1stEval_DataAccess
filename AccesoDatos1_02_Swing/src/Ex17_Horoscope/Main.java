@@ -40,7 +40,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		setTitle("ZODIAC SIGN");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 900, 540);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 64, 64));
